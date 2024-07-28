@@ -1,0 +1,55 @@
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+.fixed-width-form {
+  width: 25%;
+  min-width: 300px;
+}
+
+button, input {
+  cursor: pointer;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.cartoon-ui {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.cartoon-ui .btn, .cartoon-ui table, .cartoon-ui th, .cartoon-ui td {
+  border: 3px solid black !important;
+  box-shadow: 3px 3px 0 black;
+  border-radius: 5px;
+}
+
+.cartoon-ui .btn {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  transition: transform 0.1s;
+}
+
+.cartoon-ui .btn:hover {
+  transform: translate(-3px, -3px);
+}
+
+.cartoon-ui table thead {
+  background-color: #f0f0f0;
+}
+
+.cartoon-ui table tbody tr:nth-child(odd) {
+  background-color: #e0e0e0;
+}
+
+.cartoon-ui table tbody tr:hover {
+  background-color: #d0d0d0;
+}
+
+.cartoon-ui .checkbox {
+  cursor: pointer;
+}
+
