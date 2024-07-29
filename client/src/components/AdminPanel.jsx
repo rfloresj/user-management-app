@@ -95,8 +95,7 @@ const AdminPanel = () => {
     <div className='container-fluid cartoon-ui'>
       <div className='row justify-content-between align-items-center py-3 mb-4 border-bottom'>
         <div className='col-12 col-md-6'>
-          <h2 className='cartoon-ui'
-              style={{ fontFamily: 'Gill Sans, sans-serif' }}>User Management</h2>
+          <h2 className='cartoon-ui'>User Management</h2>
         </div>
         <div className='col-12 col-md-6 text-md-end'>
           <span className='me-3'>
@@ -112,9 +111,13 @@ const AdminPanel = () => {
           <button
             className='btn btn-danger me-2 mb-2'
             onClick={() => handleAction('block')}
-            style={{ background: '#FA5067', color: 'white'}}
+            style={{ background: '#FA5067', color: 'white' }}
           >
-            <i className='bi bi-lock' style={{ background: '#FA5067', color: 'white'}}></i> Block
+            <i
+              className='bi bi-lock'
+              style={{ background: '#FA5067', color: 'white' }}
+            ></i>{' '}
+            Block
           </button>
           <button
             className='btn btn-secondary me-2 mb-2'
@@ -126,7 +129,7 @@ const AdminPanel = () => {
             className='btn btn-danger mb-2'
             onClick={() => handleAction('delete')}
           >
-            <i className='bi bi-trash' style={{ color: 'red'}}></i>
+            <i className='bi bi-trash' style={{ color: 'red' }}></i>
           </button>
         </div>
       </div>
