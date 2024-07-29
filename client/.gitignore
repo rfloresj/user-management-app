@@ -25,6 +25,3 @@ dist-ssr
 
 # Service account key
 serviceAccountKey.json
-
-# Firebase configuration
-src/firebase.js
