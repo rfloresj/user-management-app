@@ -8,14 +8,18 @@ require('dotenv').config();
 const serviceAccount = require('./serviceAccountKey.json');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: 'https://loquacious-sunshine-54eab5.netlify.app',
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'user_management',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 db.connect((err) => {
