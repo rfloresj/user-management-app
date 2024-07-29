@@ -94,3 +94,7 @@ out/
 *.conf
 *.ini
 *.local
+.vercel
+
+# Local Netlify folder
+.netlify
