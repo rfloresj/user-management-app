@@ -60,7 +60,7 @@ app.post('/api/users/register', (req, res) => {
         console.error('Error registering user:', err);
         return res.status(500).send('Error registering user');
       }
-      res.send('User registered');
+      res.status(200).send('User registered');
     }
   );
 });

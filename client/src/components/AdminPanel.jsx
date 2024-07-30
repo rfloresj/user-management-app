@@ -83,6 +83,7 @@ const AdminPanel = () => {
 
   const handleLogout = () => {
     auth.signOut();
+    localStorage.removeItem('userName');
   };
 
   const toggleSort = () => {

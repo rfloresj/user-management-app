@@ -29,6 +29,8 @@ const Register = () => {
         name: name,
       });
 
+      localStorage.setItem('userName', name);
+
       navigate('/admin');
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
