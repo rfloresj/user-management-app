@@ -3,12 +3,14 @@ import { auth } from '../firebase';
 import axios from 'axios';
 import { formatDate } from '../utils/helpers';
 import './styles.css';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPanel = () => {
   const [users, setUsers] = useState([]);
   const [selectedUsers, setSelectedUsers] = useState([]);
   const [userName, setUserName] = useState('');
   const [sortOption, setSortOption] = useState('');
+  const navigate = useNavigate();
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -74,8 +76,19 @@ const AdminPanel = () => {
       });
 
       const response = await axios.get(`${API_BASE_URL}/users`);
-      setUsers(Array.isArray(response.data) ? response.data : []);
+      const updatedUsers = Array.isArray(response.data) ? response.data : [];
+      setUsers(updatedUsers);
       setSelectedUsers([]);
+
+      // Check if all users are blocked
+      const allUsersBlocked = updatedUsers.every(
+        (user) => user.status === 'blocked'
+      );
+      if (allUsersBlocked) {
+        alert('All users are blocked. Redirecting to login page.');
+        auth.signOut();
+        navigate('/login');
+      }
     } catch (error) {
       console.error(`Error performing action (${action}):`, error);
     }
